@@ -23,9 +23,9 @@ variable "tag_name" {
   default     = "my-ec2-instance"
 }
 
-variable "vpc" {
-  description = "Name of the VPC"
-  default     = "Selenium_VPC"
+variable "subnet_id" {
+  description = "Name of the subnet"
+  default     = "subnet-0023f82aef4d9014c"
 }
 
 variable "ami_id" {
