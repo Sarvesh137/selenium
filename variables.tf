@@ -23,6 +23,11 @@ variable "tag_name" {
   default     = "my-ec2-instance"
 }
 
+variable "vpc" {
+  description = "Name of the VPC"
+  default     = "Selenium_VPC"
+}
+
 variable "ami_id" {
   description = "AMI for Docker Ec2 instance"
   default     = "ami-0f8f3e38c86610f2c"
