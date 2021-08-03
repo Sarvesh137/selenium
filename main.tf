@@ -37,7 +37,6 @@ resource "aws_security_group" "my_security_group" {
 # Create AWS ec2 instance
 resource "aws_instance" "myFirstInstance" {
   ami           = var.ami_id
-  associate_public_ip_address = true
   key_name = var.key_name
   instance_type = var.instance_type
   subnet_id = var.subnet_id
