@@ -15,7 +15,7 @@ variable "instance_type" {
 
 variable "security_group" {
   description = "Name of security group"
-  default     = "Selenium-SG"
+  default     = "Selenium"
 }
 
 variable "tag_name" {
