@@ -15,7 +15,7 @@ variable "instance_type" {
 
 variable "security_group" {
   description = "Name of security group"
-  default     = "Jenkins packaged by Bitnami-2-289-3-0 on Debian 10-AutogenByAWSMP-"
+  default     = "Default"
 }
 
 variable "tag_name" {
