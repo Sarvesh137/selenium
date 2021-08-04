@@ -23,12 +23,7 @@ variable "tag_name" {
   default     = "my-ec2-instance"
 }
 
-variable "subnet_id" {
-  description = "Name of the subnet"
-  default     = "subnet-0db199493ea16fc08"
-}
-
 variable "ami_id" {
-  description = "AMI for Docker Ec2 instance"
-  default     = "ami-05feb86c7876cd693"
+  description = "AMI for Ubuntu Ec2 instance"
+  default     = "ami-0b9064170e32bde34"
 }
