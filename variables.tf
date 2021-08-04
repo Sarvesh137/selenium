@@ -18,6 +18,11 @@ variable "security_group" {
   default     = "my-jenkins-security-group"
 }
 
+variable "subnet_id" {
+  description = "Name of the subnet"
+  default     = "subnet-0db199493ea16fc08"
+}
+
 variable "tag_name" {
   description = "Tag Name of for Ec2 instance"
   default     = "my-ec2-instance"
