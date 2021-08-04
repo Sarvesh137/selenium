@@ -30,5 +30,5 @@ variable "subnet_id" {
 
 variable "ami_id" {
   description = "AMI for Docker Ec2 instance"
-  default     = "ami-0f8f3e38c86610f2c"
+  default     = "ami-05feb86c7876cd693"
 }
