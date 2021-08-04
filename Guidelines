@@ -1,0 +1,16 @@
+https://www.youtube.com/watch?v=jaaMNK0Df8U
+Docker login
+Sarvesh137 /Dockerhub@123
+
+docker pull Jenkins
+write docker-compose,yml
+docker-compose up -d
+docker ps
+Get password from below command and use the instance public IP to open in browser
+docker exec jenkins_jenkins_1 cat /var/jenkins_home/secrets/initialAdminPassword
+Login to Jenkins and set it up
+After that add the Cloud in Jenkins and add URI details
+Also we need to provide DockerHub credentials while providing the Jenkins-slave image details as it’s going to fetch from docker hob
+
+
+Remove openjdk and install jdk1.8
