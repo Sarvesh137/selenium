@@ -1,7 +1,7 @@
 provider "aws" {
   region = var.aws_region
 }
-
+/*
 #Create security group with firewall rules
 resource "aws_security_group" "my_security_group" {
   name        = var.security_group
@@ -33,7 +33,7 @@ resource "aws_security_group" "my_security_group" {
     Name = var.security_group
   }
 }
-
+*/
 # Create AWS ec2 instance
 resource "aws_instance" "myFirstInstance" {
   ami           = var.ami_id
@@ -41,6 +41,7 @@ resource "aws_instance" "myFirstInstance" {
   instance_type = var.instance_type
   subnet_id = var.subnet_id
   security_groups= [var.security_group]
+//  vpc_security_group_ids= [var.security_group]
   tags= {
     Name = var.tag_name
   }
