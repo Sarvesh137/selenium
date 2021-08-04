@@ -15,17 +15,18 @@ variable "instance_type" {
 
 variable "security_group" {
   description = "Name of security group"
-  default     = "my-jenkins-security-group"
+//  default     = "my-jenkins-security-group"
+  default     = "Selenium"
 }
 
 variable "tag_name" {
   description = "Tag Name of for Ec2 instance"
-  default     = "my-ec2-instance"
+  default     = "Docker"
 }
 
 variable "subnet_id" {
   description = "Name of the subnet"
-  default     = "subnet-0023f82aef4d9014c"
+  default     = "subnet-0db199493ea16fc08"
 }
 
 variable "ami_id" {
