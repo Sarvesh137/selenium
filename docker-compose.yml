@@ -1,5 +1,3 @@
-// Installation of Jenkins
-
 version: "3"
 services:
   jenkins:
@@ -12,7 +10,6 @@ services:
 volumes:
   jenkins_home:
 
-//Installation of selenium plugins
 
 version: '2'
 services:
