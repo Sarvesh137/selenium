@@ -12,5 +12,18 @@ Login to Jenkins and set it up
 After that add the Cloud in Jenkins and add URI details
 Also we need to provide DockerHub credentials while providing the Jenkins-slave image details as it’s going to fetch from docker hob
 
+sudo vi /lib/systemd/system/docker.service
+
+--Add below line and comment the actual ExecStart
+ExecStart=/usr/bin/dockerd -H tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock
+
+--restart the docker-daemon :
+sudo systemctl daemon-reload
+
+--restart the docker
+sudo service docker restart
+sudo service docker status
+docker ps
+
 
 Remove openjdk and install jdk1.8
