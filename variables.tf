@@ -34,7 +34,7 @@ variable "eni_id" {
   default = "eni-01d2de4599a69a809"
 }
 
-variable "eip" {
+variable "public" {
   description = "Tag this eni to new ec2"
   default = "44.197.149.255"
 }
