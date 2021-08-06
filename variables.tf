@@ -20,7 +20,7 @@ variable "security_group" {
 
 variable "subnet_id" {
   description = "Name of the subnet"
-  default     = "subnet-0db199493ea16fc08"
+  default     = "subnet-0176f5acecec34cc3"
 }
 
 variable "tag_name" {
