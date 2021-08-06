@@ -45,11 +45,11 @@ resource "aws_security_group" "my_security_group" {
   }
 }
 
-resource "aws_instance" "my-ec2-instance" {
+resource "aws_instance" "Docker" {
   ami = var.ami_id
   key_name = var.key_name
   instance_type = var.instance_type
-//  security_groups= [ "security_jenkins_port"]
+#  security_groups= [ "security_jenkins_port"]
   network_interface {
      network_interface_id = var.eni_id
      device_index = 0
@@ -65,7 +65,6 @@ resource "aws_network_interface_attachment" "Docker" {
   device_index         = 0
 }
 
-# Create Elastic IP address
 resource "aws_eip" "Docker" {
   vpc      = true
   instance = aws_instance.Docker.id
