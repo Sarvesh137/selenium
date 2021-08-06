@@ -60,6 +60,7 @@ resource "aws_instance" "Docker" {
 curl -o https://https://github.com/Sarvesh137/selenium/blob/main/docker-compose.yml
 chmod 0755 docker-compose.yml
 docker-compose up -d
+sudo yum update -y
 # Do some kind of JSON processing with ./jq
 EOH
   }
