@@ -34,6 +34,11 @@ variable "eni_id" {
   default = "eni-0fbec94da39671148"
 }
 
+variable "eip" {
+  description = "Tag this eni to new ec2"
+  default = "ElasticIP"
+}
+
 variable "ami_id" {
   description = "AMI for Ubuntu Ec2 instance"
 //  default     = "ami-0f8f3e38c86610f2c"
