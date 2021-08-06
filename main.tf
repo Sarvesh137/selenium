@@ -1,7 +1,8 @@
 provider "aws" {
-  region = var.aws_region
+  # for historical note
+  #version = "1.41"
+  region  = "us-east-1"
 }
-
 
 resource "aws_security_group" "my_security_group" {
   name        = var.security_group
