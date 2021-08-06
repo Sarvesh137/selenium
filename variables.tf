@@ -19,6 +19,12 @@ variable "security_group_id" {
   default     = "sg-0995d4ca2af5a2f7f"
 }
 
+variable "security_group" {
+  description = "Name of security group"
+  default     = "my-jenkins-security-group"
+
+}
+
 variable "subnet_id" {
   description = "Name of the subnet"
   default     = "subnet-0176f5acecec34cc3"
