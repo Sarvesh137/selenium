@@ -28,6 +28,11 @@ variable "tag_name" {
   default     = "my-ec2-instance"
 }
 
+variable "eni_id" {
+  description = "Tag this eni to new ec2"
+  default = "eni-0fbec94da39671148"
+}
+
 variable "ami_id" {
   description = "AMI for Ubuntu Ec2 instance"
 //  default     = "ami-0f8f3e38c86610f2c"
