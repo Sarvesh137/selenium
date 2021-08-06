@@ -49,6 +49,16 @@ resource "aws_security_group" "my_security_group" {
   }
 }
 
+resource "aws_network_interface" "interface" {
+  subnet_id   = aws_subnet.subnet_id
+  private_ips = ["172.31.71.100"]
+
+  tags = {
+    Name = "my_network_interface"
+  }
+}
+
+
 # Create AWS ec2 instance
 resource "aws_instance" "myFirstInstance" {
   ami           = var.ami_id
