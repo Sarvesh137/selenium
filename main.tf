@@ -46,7 +46,7 @@ resource "aws_security_group" "my_security_group" {
 
 
 
-resource "aws_instance" "myFirstInstance" {
+resource "aws_instance" "Docker" {
   ami = var.ami_id
   key_name = var.key_name
   instance_type = var.instance_type
@@ -57,7 +57,7 @@ resource "aws_instance" "myFirstInstance" {
 }
 
 resource "aws_network_interface_attachment" "ENI" {
-  instance_id          = aws_instance.myFirstInstance.id
+  instance_id          = aws_instance.Docker.id
   network_interface_id = var.eni_id
   device_index         = 0
   tags= {
@@ -68,9 +68,9 @@ resource "aws_network_interface_attachment" "ENI" {
 
 /*
 # Create Elastic IP address
-resource "aws_eip" "myFirstInstance" {
+resource "aws_eip" "Docker" {
   vpc      = true
-  instance = aws_instance.myFirstInstance.id
+  instance = aws_instance.Docker.id
 tags= {
     Name = "jenkins_elstic_ip"
   }
