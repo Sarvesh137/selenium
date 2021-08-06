@@ -13,10 +13,10 @@ variable "instance_type" {
   default     =  "t2.micro"
 }
 
-variable "security_group" {
+variable "security_group_id" {
   description = "Name of security group"
 //  default     = "my-jenkins-security-group"
-  default     = "jenkins"
+  default     = "sg-0995d4ca2af5a2f7f"
 }
 
 variable "subnet_id" {
