@@ -31,12 +31,12 @@ variable "tag_name" {
 
 variable "eni_id" {
   description = "Tag this eni to new ec2"
-  default = "eni-0fbec94da39671148"
+  default = "eni-01d2de4599a69a809"
 }
 
 variable "eip" {
   description = "Tag this eni to new ec2"
-  default = "ElasticIP"
+  default = "44.197.149.255"
 }
 
 variable "ami_id" {
