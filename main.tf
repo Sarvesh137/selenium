@@ -2,6 +2,7 @@ provider "aws" {
   region = var.aws_region
 }
 
+/*
 #Create security group with firewall rules
 resource "aws_security_group" "my_security_group" {
   name        = var.security_group
@@ -49,6 +50,8 @@ resource "aws_security_group" "my_security_group" {
   }
 }
 
+*/
+
 /*  
 resource "aws_network_interface" "interface" {
   subnet_id   = var.subnet_id
@@ -59,37 +62,28 @@ resource "aws_network_interface" "interface" {
 }
 */
 
-  
-resource "aws_eip_association" "eip_assoc" {
-  instance_id   = aws_instance.myFirstInstance.id
-  allocation_id = aws_eip.myFirstInstance.id
+resource "aws_network_interface_attachment" "ENI" {
+  instance_id          = aws_instance.myFirstInstance.id
+  network_interface_id = var.eni_id
+  device_index         = 0
 }
 
-resource "aws_instance" "myFirstInstance" {
-  ami               = var.ami_id
-  availability_zone = "us-east-1"
-  instance_type     = var.instance_type
-  subnet_id = var.subnet_id
-  tags = {
-    Name = var.tag_name
-  }
-}
-/*
+
 # Create AWS ec2 instance
 resource "aws_instance" "myFirstInstance" {
   ami           = var.ami_id
   key_name = var.key_name
   instance_type = var.instance_type
 //  subnet_id = var.subnet_id
-//  security_groups= [var.security_group]
+  security_groups= [var.security_group]
  // network_interface_id= var.eni_id
 //  vpc_security_group_ids= [var.security_group]
   tags= {
     Name = var.tag_name
   }
 }
-*/
 
+/*
 # Create Elastic IP address
 resource "aws_eip" "myFirstInstance" {
   vpc      = true
@@ -98,3 +92,4 @@ tags= {
     Name = var.eip
   }
 }
+*/
