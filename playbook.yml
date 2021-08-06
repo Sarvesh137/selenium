@@ -1,0 +1,5 @@
+---
+
+tasks:
+     - name: Change the working directory to /opt before executing the command
+       ansible.builtin.shell: sudo yum update
