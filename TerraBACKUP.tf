@@ -52,22 +52,15 @@ resource "aws_security_group" "my_security_group" {
 
 */
 
-/*  
-resource "aws_network_interface" "interface" {
-  subnet_id   = var.subnet_id
-  private_ips = ["172.31.70.150"]
-  tags = {
-    Name = "my_network_interface"
+resource "aws_network_interface" "jenkins_eni" {
+  subnet_id       = var.subnet_id
+  security_groups = [var.security_group]
+
+  attachment {
+    instance     = aws_instance.myFirstInstance.id
+    device_index = 1
   }
 }
-*/
-
-resource "aws_network_interface_attachment" "ENI" {
-  instance_id          = aws_instance.myFirstInstance.id
-  network_interface_id = var.eni_id
-  device_index         = 0
-}
-
 
 # Create AWS ec2 instance
 resource "aws_instance" "myFirstInstance" {
@@ -82,6 +75,13 @@ resource "aws_instance" "myFirstInstance" {
     Name = var.tag_name
   }
 }
+
+resource "aws_eip_association" "eip_assoc" {
+  instance_id   = aws_instance.myFirstInstance.id
+  network_interface_id = aws_network_interface.jenkins_eni.id
+  public_ip = var.public
+}
+
 
 /*
 # Create Elastic IP address
