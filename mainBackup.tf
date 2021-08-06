@@ -51,7 +51,7 @@ resource "aws_security_group" "my_security_group" {
 
 resource "aws_network_interface" "interface" {
   subnet_id   = var.subnet_id
-  private_ips = ["172.31.71.100"]
+  private_ips = ["172.31.70.150"]
   tags = {
     Name = "my_network_interface"
   }
