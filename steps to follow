@@ -1,0 +1,12 @@
+Create one Jenkins instance 
+Create 2 ENI explicitly and attach Elastic IP to it by creating two new elastic IP
+Attach the EIP to ENI and change termination behaviour of ENI to non terminate so that it will not get deleted after instance deletion.
+Create the own AMI image in AWS by creating and customizing own image with all requirements.
+Install Terraform on Jenkins master server
+Provide Admin access or EC2 full access IAM role to EC2 instance of Jenkins. Else terraform ll not run
+
+Add plugins : AWS, Docker, ssh
+
+Create infra using Jenkins terraform 
+Create one new pipeline for configuration and add ssh agent as docker server in configure system then run the commands thru pipeline to configure and start docker
+We need to add the cloud in manage Jenkins -> Cloud after adding the Docker plugin
