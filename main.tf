@@ -69,7 +69,7 @@ resource "aws_instance" "myFirstInstance" {
   ami               = var.ami_id
   availability_zone = "us-east-1"
   instance_type     = var.instance_type
-
+  subnet_id = var.subnet_id
   tags = {
     Name = var.tag_name
   }
