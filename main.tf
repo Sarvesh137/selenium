@@ -52,17 +52,21 @@ resource "aws_instance" "Docker" {
   key_name = var.key_name
   instance_type = var.instance_type
 //  security_groups= [ "security_jenkins_port"]
+  network_interface {
+     network_interface_id = var.eni_id
+     device_index = 0
+  }
   tags= {
     Name = var.tag_name
   }
 }
-
+/*
 resource "aws_network_interface_attachment" "Docker" {
   instance_id          = aws_instance.Docker.id
   network_interface_id = var.eni_id
   device_index         = 0
 }
-
+*/
 
 /*
 # Create Elastic IP address
