@@ -36,5 +36,5 @@ variable "eni_id" {
 variable "ami_id" {
   description = "AMI for Ubuntu Ec2 instance"
 //  default     = "ami-0f8f3e38c86610f2c"
-  default = "ami-0f8f3e38c86610f2c"
+  default = "ami-0e233e7c76d115c7f"
 }
