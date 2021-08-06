@@ -50,19 +50,16 @@ resource "aws_instance" "Docker" {
   ami = var.ami_id
   key_name = var.key_name
   instance_type = var.instance_type
-  security_groups= [ "security_jenkins_port"]
+//  security_groups= [ "security_jenkins_port"]
   tags= {
     Name = var.tag_name
   }
 }
 
-resource "aws_network_interface_attachment" "ENI" {
+resource "aws_network_interface_attachment" "Docker" {
   instance_id          = aws_instance.Docker.id
   network_interface_id = var.eni_id
   device_index         = 0
-  tags= {
-    Name = var.tag_name
-  }
 }
 
 
