@@ -32,7 +32,7 @@ variable "subnet_id" {
 
 variable "tag_name" {
   description = "Tag Name of for Ec2 instance"
-  default     = "Selenium_Docker"
+  default     = "my-ec2-instance"
 }
 
 variable "eni_id" {
