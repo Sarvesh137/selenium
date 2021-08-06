@@ -50,9 +50,8 @@ resource "aws_security_group" "my_security_group" {
 }
 
 resource "aws_network_interface" "interface" {
-  subnet_id   = aws_subnet.subnet_id
+  subnet_id   = var.subnet_id
   private_ips = ["172.31.71.100"]
-
   tags = {
     Name = "my_network_interface"
   }
@@ -66,7 +65,7 @@ resource "aws_instance" "myFirstInstance" {
   instance_type = var.instance_type
 //  subnet_id = var.subnet_id
   security_groups= [var.security_group]
-  network_interface_id= var.eni_id
+ // network_interface_id= var.eni_id
 //  vpc_security_group_ids= [var.security_group]
   tags= {
     Name = var.tag_name
