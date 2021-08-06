@@ -1,7 +1,7 @@
 provider "aws" {
   region = var.aws_region
 }
-
+/*
 #Create security group with firewall rules
 resource "aws_security_group" "my_security_group" {
   name        = var.security_group
@@ -48,6 +48,9 @@ resource "aws_security_group" "my_security_group" {
     Name = var.security_group
   }
 }
+*/
+  
+
 /*
 resource "aws_network_interface" "interface" {
   subnet_id   = var.subnet_id
