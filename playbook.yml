@@ -1,5 +1,9 @@
 ---
 
 tasks:
+
+      - name: Clone
+        ansible.builtin.shell: git clone https://github.com/Sarvesh137/selenium.git/
+       
      - name: Change the working directory to /opt before executing the command
        ansible.builtin.shell: sudo yum update
