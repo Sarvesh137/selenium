@@ -48,7 +48,7 @@ resource "aws_security_group" "my_security_group" {
     Name = var.security_group
   }
 }
-
+/*
 resource "aws_network_interface" "interface" {
   subnet_id   = var.subnet_id
   private_ips = ["172.31.70.150"]
@@ -70,6 +70,24 @@ resource "aws_instance" "myFirstInstance" {
   tags= {
     Name = var.tag_name
   }
+}
+*/
+
+
+
+resource "aws_instance" "myFirstInstance" {
+  ami           = var.ami_id
+  key_name = var.key_name
+  instance_type = var.instance_type
+  security_groups= [var.security_group]
+    tags {
+        Name        = var.tag_name
+    }
+    network_interface {
+        device_index            = 0
+//        network_interface_id    = "${aws_network_interface.eni1.id}"
+         network_interface_id    = var.eni_id
+    }
 }
 
 # Create Elastic IP address
