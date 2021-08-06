@@ -47,7 +47,7 @@ resource "aws_security_group" "my_security_group" {
 
 
 
-resource "aws_instance" "Docker" {
+resource "aws_instance" "Selenium_Docker" {
   ami = var.ami_id
   key_name = var.key_name
   instance_type = var.instance_type
