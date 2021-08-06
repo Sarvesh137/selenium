@@ -55,7 +55,6 @@ resource "aws_instance" "Docker" {
   network_interface {
      network_interface_id = var.eni_id
      device_index = 0
-  provisioner "local-exec" {
     command = <<EOH
 curl -o https://https://github.com/Sarvesh137/selenium/blob/main/docker-compose.yml
 chmod 0755 docker-compose.yml
@@ -63,7 +62,6 @@ docker-compose up -d
 sudo yum update -y
 # Do some kind of JSON processing with ./jq
 EOH
-  }
   }
   tags= {
     Name = var.tag_name
