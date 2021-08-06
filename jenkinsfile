@@ -1,0 +1,48 @@
+  
+pipeline {
+    agent any
+
+    stages {
+        stage('Checkout') {
+            steps {
+            checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Sarvesh137/selenium.git']]])            
+
+          }
+        }
+        
+        stage ("terraform init") {
+            steps {
+                sh ('terraform init') 
+            }
+        }
+        
+    stage('Terraform action') {
+        steps {
+		    script {
+		     try {
+		    	echo "Terraform action is --> ${action}"
+                        sh ('terraform ${action} --auto-approve')
+                        sh "exit 0"
+                        currentBuild.result = 'SUCCESS'
+		}
+	            catch (exc) {
+                currentBuild.result = 'FAILURE'
+        }
+    }
+        }
+}
+
+
+        
+     stage ("Call configuration") {
+            when {
+                    expression { params.action == 'apply' }
+                 }
+            steps {
+                build 'Configure'
+            }
+
+       }
+           
+    }
+}
