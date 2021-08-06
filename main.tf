@@ -45,8 +45,6 @@ resource "aws_security_group" "my_security_group" {
   }
 }
 
-
-
 resource "aws_instance" "my-ec2-instance" {
   ami = var.ami_id
   key_name = var.key_name
@@ -59,15 +57,14 @@ resource "aws_instance" "my-ec2-instance" {
     Name = var.tag_name
   }
 }
+  
 /*
 resource "aws_network_interface_attachment" "Docker" {
   instance_id          = aws_instance.my-ec2-instance.id
   network_interface_id = var.eni_id
   device_index         = 0
 }
-*/
 
-/*
 # Create Elastic IP address
 resource "aws_eip" "Docker" {
   vpc      = true
@@ -76,5 +73,4 @@ tags= {
     Name = "jenkins_elstic_ip"
   }
 }
-
 */
