@@ -47,7 +47,7 @@ resource "aws_security_group" "my_security_group" {
 
 
 
-resource "aws_instance" "Selenium_Docker" {
+resource "aws_instance" "my-ec2-instance" {
   ami = var.ami_id
   key_name = var.key_name
   instance_type = var.instance_type
@@ -61,7 +61,7 @@ resource "aws_instance" "Selenium_Docker" {
 }
 /*
 resource "aws_network_interface_attachment" "Docker" {
-  instance_id          = aws_instance.Docker.id
+  instance_id          = aws_instance.my-ec2-instance.id
   network_interface_id = var.eni_id
   device_index         = 0
 }
