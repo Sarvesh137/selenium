@@ -80,13 +80,13 @@ resource "aws_instance" "myFirstInstance" {
   key_name = var.key_name
   instance_type = var.instance_type
   security_groups= [var.security_group]
-    tags {
-        Name        = var.tag_name
+tags {
+        Name = var.tag_name
     }
-    network_interface {
-        device_index            = 0
-//        network_interface_id    = "${aws_network_interface.eni1.id}"
-         network_interface_id    = var.eni_id
+  network_interface {
+    device_index            = 0
+//  network_interface_id    = "${aws_network_interface.eni1.id}"
+    network_interface_id    = var.eni_id
     }
 }
 
