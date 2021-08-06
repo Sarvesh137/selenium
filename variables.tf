@@ -37,7 +37,7 @@ variable "tag_name" {
 
 variable "eni_id" {
   description = "Tag this eni to new ec2"
-  default = "eni-01d2de4599a69a809"
+  default = "eni-0157fb2ca0b5fb410"
 }
 
 variable "public" {
