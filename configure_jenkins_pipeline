@@ -5,3 +5,4 @@ sudo sed -i 's!fd:// --containerd=/run/containerd/containerd.sock $OPTIONS $DOCK
 sudo systemctl daemon-reload
 sudo service docker restart
 docker-compose up -d
+sudo yum install maven
