@@ -5,3 +5,4 @@ sudo apt-get update && sudo apt-get install terraform
 
 
 Selenium+Jenkins Integration : Page Object Model (POM) Design With Selenium - Part -6
+https://www.jenkins.io/doc/book/installing/linux/#debianubuntu
