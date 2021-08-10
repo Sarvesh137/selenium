@@ -1,6 +1,7 @@
 rm -rf selenium
 git clone https://github.com/Sarvesh137/selenium.git
 cd selenium
+docker run -d --name jenkins -p 5000:5000 -p 8080:8080 jenkins/jenkins:lts
 sudo sed -i 's!fd:// --containerd=/run/containerd/containerd.sock $OPTIONS $DOCKER_STORAGE_OPTIONS $DOCKER_ADD_RUNTIMES! tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock!g' /lib/systemd/system/docker.service 
 sudo systemctl daemon-reload
 sudo service docker restart
