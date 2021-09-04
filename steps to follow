@@ -7,6 +7,10 @@ Provide Admin access or EC2 full access IAM role to EC2 instance of Jenkins. Els
 
 Add plugins : AWS, Docker, ssh
 
+ONCE DOCKER SERVER IS CREATED, ADD IT'S CREDENTIALS WITH PEM KEY AND ADD THE SERVER IN CONFIGURE SYSTEMS UNDER SSH_SITES
+THEN IN CONFIG JOB IN BUILD STEP SELECT EXECUTE SHELL ON REMOTE HOST USING SSH
+
+
 Create infra using Jenkins terraform 
 Create one new pipeline for configuration and add ssh agent as docker server in configure system then run the commands thru pipeline to configure and start docker
 We need to add the cloud in manage Jenkins -> Cloud after adding the Docker plugin
