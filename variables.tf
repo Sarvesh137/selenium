@@ -5,7 +5,7 @@ variable "aws_region" {
 
 variable "key_name" {
   description = " SSH keys to connect to ec2 instance"
-  default     =  "Home_Jenkins"
+  default     =  "Docker_key"
 }
 
 variable "instance_type" {
@@ -40,10 +40,11 @@ variable "eni_id" {
   default = "eni-078f8c5be52e427fe"
 }
 
-variable "public" {
-  description = "Tag this eni to new ec2"
-  default = "54.198.89.91"
-}
+//
+//variable "public" {
+//  description = "Tag this eni to new ec2"
+//  default = "54.198.89.91"
+//}
 
 variable "ami_id" {
   description = "AMI for Ubuntu Ec2 instance"
