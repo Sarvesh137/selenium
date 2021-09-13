@@ -1,0 +1,7 @@
+cat /home/ec2-user/.bashrc
+rm -rf selenium
+git clone https://github.com/Sarvesh137/selenium.git
+ls -ltr
+cd selenium/AzureSeleniumDemo-master
+ls -latr
+mvn clean test
