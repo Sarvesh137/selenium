@@ -1,2 +1,2 @@
-#!/usr/bin/env python
+
 python -m SimpleHTTPServer>/dev/null 2>&1 &
