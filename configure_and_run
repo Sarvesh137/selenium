@@ -1,0 +1,34 @@
+rm -rf selenium
+git clone https://github.com/Sarvesh137/selenium.git
+#sudo yum install openjdk11 apache-maven mailx -y
+#sudo yum remove java-1.7.0-openjdk* -y
+sudo amazon-linux-extras install java-openjdk11 -y
+sudo yum install wget httpd-y
+sudo wget https://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
+mvn --version
+sudo yum install apache-maven mailx -y
+mv ~/.bashrc ~/bashrcbak
+cp selenium/.bashrc .
+source ~/.bashrc 
+cd selenium
+ls -ltr
+docker run -d --name jenkins -p 5000:5000 -p 8080:8080 jenkins/jenkins:lts
+sudo sed -i 's!fd:// --containerd=/run/containerd/containerd.sock $OPTIONS $DOCKER_STORAGE_OPTIONS $DOCKER_ADD_RUNTIMES! tcp://0.0.0.0:4243 -H unix:///var/run/docker.sock!g' /lib/systemd/system/docker.service 
+sudo systemctl daemon-reload
+sudo service docker restart
+docker-compose up -d
+
+
+cd /home/ec2-user/selenium/AzureSeleniumDemo-master
+ls -latr
+mvn clean test
+cd  /home/ec2-user/selenium/AzureSeleniumDemo-master/test-output/
+sudo cp emailable-report.html /var/www/html
+cd /var/www/html
+sudo mv emailable-report.html index.html
+sudo service httpd restart
+
+#nohup /usr/bin/python -m SimpleHTTPServer &
+
+#/usr/bin/python -m SimpleHTTPServer>/dev/null 2>&1&
