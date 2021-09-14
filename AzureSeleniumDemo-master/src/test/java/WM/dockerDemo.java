@@ -16,7 +16,7 @@ public class dockerDemo {
 	{
 		DesiredCapabilities cap = new DesiredCapabilities();
 		cap.setBrowserName(BrowserType.CHROME);
-		WebDriver driver=new RemoteWebDriver(new URL("http://3.219.167.201:4444/wd/hub"), cap);
+		WebDriver driver=new RemoteWebDriver(new URL("http://3.238.15.84:4444/wd/hub"), cap);
 	   //driver.get("http://www.google.com");
 		driver.get("https://www.freecrm.com/index.html");
 		String pagetitle = driver.getTitle();
